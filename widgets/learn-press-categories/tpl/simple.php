@@ -4,10 +4,11 @@
 		<div class="learn-press-categories__desc"><?php echo esc_html( $instance['text'] ); ?></div>
 	</div>
 	<?php
+		$number = ($instance['number']) ? intval($instance['number']) : 7:
 		$terms = get_terms(
 			array(
 				'taxonomy' => 'course_category',
-				'number' => intval($instance['number']) || 7,
+				'number' => $number,
 				'orderby' => 'name',
 				'hide_empty' => false
 			)
