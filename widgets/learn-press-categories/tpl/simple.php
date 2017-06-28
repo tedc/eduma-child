@@ -1,4 +1,4 @@
-<div class="learn-press-categories">
+<div class="learn-press-categories<?php echo ($instance['red']) ? ' learn-press-categories--red' : ''; ?>">
 	<div class="learn-press-categories__cell">
 		<div class="learn-press-categories__content learn-press-categories__content--desc">
 			<h2 class="learn-press-categories__title"><?php echo esc_html( $instance['title'] ); ?></h2>

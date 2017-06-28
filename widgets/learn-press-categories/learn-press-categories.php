@@ -39,6 +39,12 @@ class Learn_Press_Categories extends SiteOrigin_Widget  {
 					// TRANSLATORS: Uniform Resource Locator
 					'label' => __('Quantità', 'siteorigin-panels'),
 				),
+				'red' => array(
+					'type' => 'checkbox',
+					// TRANSLATORS: Uniform Resource Locator
+					'label' => __('Sfondo rosso', 'siteorigin-panels'),
+					'value' => 1
+				),
 			),
 			get_template_directory()
 		);		
