@@ -7,8 +7,9 @@
 		$terms = get_terms(
 			array(
 				'taxonomy' => 'course_category',
-				'number' => $instance['number'] || 7,
-				'orderby' => 'name'
+				'number' => intval($instance['number']) || 7,
+				'orderby' => 'name',
+				'hide_empty' => false
 			)
 		); 
 		foreach ($terms as $term) :
