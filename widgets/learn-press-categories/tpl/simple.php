@@ -4,7 +4,7 @@
 		<div class="learn-press-categories__desc"><?php echo esc_html( $instance['text'] ); ?></div>
 	</div>
 	<?php
-		$number = ($instance['number']) ? intval($instance['number']) : 7;
+		$number = ($instance['number']) ? intval($instance['number']) : 0;
 		$terms = get_terms(
 			array(
 				'taxonomy' => 'course_category',
@@ -13,8 +13,6 @@
 				'hide_empty' => false
 			)
 		);
-		var_dump(intval($instance['number']));
-		var_dump($terms);
 		foreach ($terms as $term) :
 	?>
 	<div class="learn-press-categories__cell">
