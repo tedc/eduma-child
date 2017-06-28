@@ -17,7 +17,7 @@
 		);
 		foreach ($terms as $term) :
 	?>
-	<div class="learn-press-categories__cell categories__cell--term">
+	<div class="learn-press-categories__cell learn-press-categories__cell--term">
 		<?php
 			$img_id = get_term_meta( $term->term_id, 'thim_learnpress_top_image', true )['id'];
 			$image = wp_get_attachment_image_src( $img_id, 'large', false ); ?>
