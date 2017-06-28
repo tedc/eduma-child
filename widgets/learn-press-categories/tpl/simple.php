@@ -1,7 +1,9 @@
 <div class="learn-press-categories">
 	<div class="learn-press-categories__cell">
-		<h2 class="learn-press-categories__title"><?php echo esc_html( $instance['title'] ); ?></h2>
-		<div class="learn-press-categories__desc"><?php echo esc_html( $instance['text'] ); ?></div>
+		<div class="learn-press-categories__content learn-press-categories__content--desc">
+			<h2 class="learn-press-categories__title"><?php echo esc_html( $instance['title'] ); ?></h2>
+			<div class="learn-press-categories__desc"><?php echo esc_html( $instance['text'] ); ?></div>
+		</div>
 	</div>
 	<?php
 		$number = ($instance['number']) ? intval($instance['number']) : 0;
@@ -15,7 +17,7 @@
 		);
 		foreach ($terms as $term) :
 	?>
-	<div class="learn-press-categories__cell">
+	<div class="learn-press-categories__cell categories__cell--term">
 		<?php
 			$img_id = get_term_meta( $term->term_id, 'thim_learnpress_top_image', true )['id'];
 			$image = wp_get_attachment_image_src( $img_id, 'large', false ); ?>
