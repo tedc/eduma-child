@@ -11,7 +11,9 @@
 				'orderby' => 'name',
 				'hide_empty' => false
 			)
-		); 
+		);
+		var_dump(intval($instance['number']));
+		var_dump($terms);
 		foreach ($terms as $term) :
 	?>
 	<div class="learn-press-categories__cell">
