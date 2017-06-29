@@ -2,7 +2,7 @@
 
 /*
 Widget Name: Learn Press Categories
-Description: Wdiget per inserire le categorie di Learn Press in formato mosaico.
+Description: Widget per inserire le categorie di Learn Press in formato mosaico.
 Author: Besposken Studio
 Author URI: http://www.bspkn.it
 */

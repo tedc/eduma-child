@@ -1,8 +1,8 @@
 <?php
 
 /*
-Widget Name: Learn Press Categories
-Description: Wdiget per inserire le categorie di Learn Press in formato mosaico.
+Widget Name: Learn Press Search
+Description: Widget per inserire il form di ricerca con le categorie.
 Author: Besposken Studio
 Author URI: http://www.bspkn.it
 */

@@ -1,8 +1,8 @@
 <?php
 
 /*
-Widget Name: Learn Press Categories
-Description: Wdiget per inserire le categorie di Learn Press in formato mosaico.
+Widget Name: Immagine a rimpire le colonne
+Description: Widget che permette di creare immagini che riempano le colonne
 Author: Besposken Studio
 Author URI: http://www.bspkn.it
 */
