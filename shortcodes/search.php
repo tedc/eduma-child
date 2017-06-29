@@ -29,7 +29,7 @@
 <script type="text/javascript">
 	(function($) {
 		$('.courses-search__select').each(function() {
-			var value = $(this).find('.courses-search__value');
+			var value = $(this).find('.courses-search__text');
 			$(this).find('select[name="course_category"]').on('change', function() {
 				var val = $(this).val(),
 					text = $(this).find('option[value="'+val+'"]').text();
