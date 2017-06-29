@@ -28,7 +28,7 @@
 	(function($) {
 		$('.courses-search__select').each(function() {
 			var value = $(this).find('.courses-search__value');
-			$(this).find('[name="course_category]').on('change', function() {
+			$(this).find('select[name="course_category"]').on('change', function() {
 				var val = $(this).val(),
 					text = $(this).find('option[value="'+val+'"]').text();
 				value.html(text);
