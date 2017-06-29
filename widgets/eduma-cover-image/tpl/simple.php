@@ -1,8 +1,8 @@
 <?php 
-	$image = $instance['image'];
+	$image = wp_get_attachment_image_src( $instance['image'];, 'full', false );
 	$position = $instance['position'];
 	$position = $instance['type'];
 ?>
-<figure class="eduma-child__figure eduma-child__figure--<?php echo $type; ?>-<?php echo $position; ?>" style="background-image: url(<?php echo $image; ?>)">
-	<img src="<?php echo $image; ?>" class="eduma-child__image" alt="">
+<figure class="eduma-child__figure eduma-child__figure--<?php echo $type; ?>-<?php echo $position; ?>" style="background-image: url(<?php echo $image[0]; ?>)">
+	<?php echo wp_get_attachment_image( $instance['image'], 'large' ); ?>
 </figure>

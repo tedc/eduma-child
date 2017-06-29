@@ -20,7 +20,7 @@ class Eduma_Image extends SiteOrigin_Widget  {
 			'eduma-cover-image',
 			__('Immagine per la colonna', 'siteorigin-panels'),
 			array(
-				'description' => __('Sele', 'siteorigin-panels'),
+				'description' => __('Widget che permette di creare immagini che riempano le colonne', 'siteorigin-panels'),
 				'default_style' => 'simple',
 				'panels_groups' => array('mytheme')
 			),
