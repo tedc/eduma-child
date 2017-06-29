@@ -60,7 +60,7 @@ function search_by_cat($query)
         ) : false;
         $query->query_vars['tax_query'] = $arr;
     }
-
+    return $query;
 }
 
 remove_filter( 'the_content', 'wpautop' );
