@@ -46,7 +46,7 @@ function search_shortcode() {
 }
 add_shortcode( 'search-courses', 'search_shortcode' );
 
-add_action('pre_get_posts', 'search_by_cat');
+//add_action('pre_get_posts', 'search_by_cat');
 function search_by_cat($query)
 {
     if (is_page(get_option('learn_press_courses_page_id'))) {
