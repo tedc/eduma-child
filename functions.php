@@ -28,7 +28,7 @@ add_filter('admin_init', 'wbexample_activate_bundled_widgets');
 
 function mytheme_add_widget_tabs($tabs) {
     $tabs[] = array(
-        'title' => __('My Tab', 'mytheme'),
+        'title' => __('Uba', 'mytheme'),
         'filter' => array(
             'groups' => array('mytheme')
         )
