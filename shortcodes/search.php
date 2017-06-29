@@ -1,7 +1,7 @@
 <form class="courses-search">
 	<input type="hidden" name="post_type" value="lp_course">
 	<div class="courses-search__select">
-		<div class="courses-search__value"></div>
+		<div class="courses-search__value"><?php _e('Seleziona categoria', 'uba'); ?></div>
 		<select name="course_category">
 			<option value="0"><?php _e('Seleziona categoria', 'uba'); ?></option>
 			<?php 
@@ -24,3 +24,15 @@
 		<input type="submit" class="button" value="<?php _e('Cerca', 'uba'); ?>" />
 	</div>
 </form>
+<script type="text/javascript">
+	(function($) {
+		$('.courses-search__select').each(function() {
+			var value = $(this).find('.courses-search__value');
+			$(this).find('[name="course_category]').on('change', function() {
+				var val = $(this).val(),
+					text = $(this).find('option[value="'+val+'"]').text();
+				value.html(text);
+			});
+		})
+	})(jQuery);
+</script>
