@@ -42,7 +42,6 @@ function search_shortcode() {
 	ob_start();
 	get_template_part('shortcodes/search');
 	$form = ob_get_clean();
-	$form = str_replace(array('<p>','</p>'), '', $form);
 	return $form;
 }
 add_shortcode( 'search-courses', 'search_shortcode' );
@@ -63,3 +62,6 @@ function search_by_cat()
         $wp_query->query_vars['tax_query'] = $arr;
     }
 }
+
+remove_filter( 'the_content', 'wpautop' );
+add_filter( 'the_content', 'wpautop' , 12);
