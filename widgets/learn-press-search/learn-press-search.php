@@ -25,6 +25,7 @@ class Learn_Press_Search extends SiteOrigin_Widget  {
 				'panels_groups' => array('mytheme')
 			),
 			array(),
+			array(),
 			get_template_directory()
 		);		
 		//$this->add_sub_widget('button', __('Button', 'siteorigin-panels'), 'SiteOrigin_Panels_Widget_Button');
