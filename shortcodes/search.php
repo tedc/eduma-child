@@ -1,5 +1,5 @@
-<form class="courses-search" method="get">
-	<input type="hidden" name="post_type" value="course">
+<form class="courses-search" method="get" action="<?php echo get_permalink(get_option('learn_press_courses_page_id') ); ?>">
+	<input type="hidden" name="ref" value="course">
 	<div class="courses-search__select">
 		<div class="courses-search__value">
 			<div class="courses-search__text"><?php _e('Seleziona categoria', 'uba'); ?></div>

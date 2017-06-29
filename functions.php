@@ -49,7 +49,7 @@ add_shortcode( 'search-courses', 'search_shortcode' );
 add_action('pre_get_posts', 'search_by_cat');
 function search_by_cat($query)
 {
-    if (is_search()) {
+    if (is_page(get_option('learn_press_courses_page_id'))) {
         $cat = intval($_GET['course_category']);
         $arr = ($cat > 0) ? array(
         	array(
@@ -59,7 +59,6 @@ function search_by_cat($query)
         	)
         ) : false;
         $query->query_vars['tax_query'] = $arr;
-        $query->set( 'post_type', array( 'post', 'lp_course' ) );
     }
 
 }
