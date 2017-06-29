@@ -20,6 +20,7 @@ add_filter('siteorigin_widgets_widget_folders', 'add_my_awesome_widgets_collecti
 function wbexample_activate_bundled_widgets(){
 	if( !get_theme_mod('bundled_widgets_activated') ) {
         SiteOrigin_Widgets_Bundle::single()->activate_widget( 'learn-press-categories' );
+        SiteOrigin_Widgets_Bundle::single()->activate_widget( 'learn-press-search' );
         set_theme_mod( 'bundled_widgets_activated', true );
     }
 }
@@ -38,13 +39,13 @@ function mytheme_add_widget_tabs($tabs) {
 add_filter('siteorigin_panels_widget_dialog_tabs', 'mytheme_add_widget_tabs', 20);
 
 
-function search_shortcode() {
-	ob_start();
-	get_template_part('shortcodes/search');
-	$form = ob_get_clean();
-	return $form;
-}
-add_shortcode( 'search-courses', 'search_shortcode' );
+// function search_shortcode() {
+// 	ob_start();
+// 	get_template_part('shortcodes/search');
+// 	$form = ob_get_clean();
+// 	return $form;
+// }
+// add_shortcode( 'search-courses', 'search_shortcode' );
 
 //add_action('pre_get_posts', 'search_by_cat');
 function search_by_cat($query)
