@@ -10,7 +10,6 @@
 				$terms = get_terms(
 					array(
 						'taxonomy' => 'course_category',
-						'number' => $number,
 						'orderby' => 'name',
 						'hide_empty' => false
 					)
