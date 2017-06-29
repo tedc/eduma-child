@@ -1,4 +1,5 @@
 <form class="courses-search">
+	<input type="hidden" name="post_type" value="lp_course">
 	<div class="courses-search__select">
 		<div class="courses-search__value"></div>
 		<select name="course_category">
@@ -19,7 +20,7 @@
 		</select>
 	</div>
 	<div class="courses-search__inputs">
-		<input type="search" placeholder="<?php _e('Corso o parola chiave', 'uba'); ?>" />
+		<input type="search" name="s" placeholder="<?php _e('Corso o parola chiave', 'uba'); ?>" />
 		<input type="submit" class="button" value="<?php _e('Cerca', 'uba'); ?>" />
 	</div>
 </form>
