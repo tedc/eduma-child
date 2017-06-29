@@ -47,9 +47,8 @@ function search_shortcode() {
 add_shortcode( 'search-courses', 'search_shortcode' );
 
 add_action('pre_get_posts', 'search_by_cat');
-function search_by_cat()
+function search_by_cat($query)
 {
-    global $wp_query;
     if (is_search()) {
         $cat = intval($_GET['course_category']);
         $arr = ($cat > 0) ? array(
@@ -59,8 +58,10 @@ function search_by_cat()
         		'term' => $cat
         	)
         ) : false;
-        $wp_query->query_vars['tax_query'] = $arr;
+        $query->query_vars['tax_query'] = $arr;
+        $query->set( 'post_type', array( 'post', 'lp_course' ) );
     }
+
 }
 
 remove_filter( 'the_content', 'wpautop' );
