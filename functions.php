@@ -36,3 +36,11 @@ function mytheme_add_widget_tabs($tabs) {
     return $tabs;
 }
 add_filter('siteorigin_panels_widget_dialog_tabs', 'mytheme_add_widget_tabs', 20);
+
+
+function search_shortcode() {
+	ob_start();
+	get_template_part('shortcodes/search');
+	return ob_get_clean();
+}
+add_shortcode( 'search-courses', 'search_shortcode' );
