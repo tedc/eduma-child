@@ -21,6 +21,7 @@ function wbexample_activate_bundled_widgets(){
 	if( !get_theme_mod('bundled_widgets_activated') ) {
         SiteOrigin_Widgets_Bundle::single()->activate_widget( 'learn-press-categories' );
         SiteOrigin_Widgets_Bundle::single()->activate_widget( 'learn-press-search' );
+        SiteOrigin_Widgets_Bundle::single()->activate_widget( 'eduma-cover-image' );
         set_theme_mod( 'bundled_widgets_activated', true );
     }
 }
