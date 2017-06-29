@@ -13,7 +13,8 @@
 						'orderby' => 'name',
 						'hide_empty' => false
 					)
-				); 
+				);
+				var_dump($terms);
 				foreach($terms as $term) :
 			?>
 			<option value="<?php echo $term->term_id; ?>"><?php echo $term->name; ?></option>
