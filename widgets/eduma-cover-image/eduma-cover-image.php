@@ -33,7 +33,7 @@ class Eduma_Image extends SiteOrigin_Widget  {
 					'choose' => __( 'Scegli immagine', 'widget-form-fields-text-domain' ),
 			        'update' => __( 'Aggiorna immagine', 'widget-form-fields-text-domain' ),
 			        'library' => 'image',
-			        'fallback' => true
+			        'fallback' => false
 				),
 				'type' => array(
 					'type' => 'select',
