@@ -41,6 +41,25 @@ add_filter('siteorigin_panels_widget_dialog_tabs', 'mytheme_add_widget_tabs', 20
 function search_shortcode() {
 	ob_start();
 	get_template_part('shortcodes/search');
-	return ob_get_clean();
+	$form = ob_get_clean();
+	$form = str_replace(array('<p>','</p>'), '', $form);
+	return $form;
 }
 add_shortcode( 'search-courses', 'search_shortcode' );
+
+add_action('pre_get_posts', 'search_by_cat');
+function search_by_cat()
+{
+    global $wp_query;
+    if (is_search()) {
+        $cat = intval($_GET['course_category']);
+        $arr = ($cat > 0) ? array(
+        	array(
+        		'taxonomy' => 'course_category',
+        		'field' => 'term_id',
+        		'term' => $cat
+        	)
+        ) : false;
+        $wp_query->query_vars['tax_query'] = $arr;
+    }
+}
