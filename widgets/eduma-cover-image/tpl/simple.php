@@ -1,5 +1,5 @@
 <?php 
-	$image = wp_get_attachment_image_src( $instance['image'];, 'full', false );
+	$image = wp_get_attachment_image_src( $instance['image'], 'full', false );
 	$position = $instance['position'];
 	$type = $instance['type'];
 ?>

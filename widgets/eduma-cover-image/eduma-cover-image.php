@@ -30,8 +30,8 @@ class Eduma_Image extends SiteOrigin_Widget  {
 					'type' => 'media',
 					// TRANSLATORS: Uniform Resource Locator
 					'label' => __('Immagine', 'siteorigin-panels'),
-					'choose' => __( 'Scegli immagine', 'widget-form-fields-text-domain' ),
-			        'update' => __( 'Aggiorna immagine', 'widget-form-fields-text-domain' ),
+					'choose' => __( 'Scegli immagine', 'siteorigin-panels' ),
+			        'update' => __( 'Aggiorna immagine', 'siteorigin-panels' ),
 			        'library' => 'image',
 			        'fallback' => false
 				),
