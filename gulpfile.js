@@ -21,6 +21,8 @@ var compass      = require('gulp-compass');
 var postcss      = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var iconfont     = require('gulp-iconfont');
+var async        = require('async');
+var consolidate  = require('gulp-consolidate');
 var rename       = require('gulp-rename');
 var modernizr    = require('gulp-modernizr');
 
@@ -272,7 +274,7 @@ gulp.task('jshint', function() {
 
 gulp.task('Iconfont', function(done){
     var iconStream = gulp.src([path.source + 'fonts/*.svg'])
-        .pipe(iconfont({ fontName: 'polaris-icons', normalize : true, formats: ['ttf', 'eot', 'woff', 'woff2', 'svg'] }));
+        .pipe(iconfont({ fontName: 'uba-icons', normalize : true, formats: ['ttf', 'eot', 'woff', 'woff2', 'svg'] }));
 
     async.parallel([
         function handleGlyphs (cb) {
@@ -280,7 +282,7 @@ gulp.task('Iconfont', function(done){
                 gulp.src(path.source + 'fonts/template.css')
                     .pipe(consolidate('lodash', {
                         glyphs: glyphs,
-                        fontName: 'polaris-icons',
+                        fontName: 'uba-icons',
                         fontPath: '../fonts/',
                         className: 'icon'
                     }))
@@ -288,7 +290,7 @@ gulp.task('Iconfont', function(done){
                         basename : '_icons',
                         extname : '.scss'
                     }))
-                    .pipe(gulp.dest(path.source + 'styles/content'))
+                    .pipe(gulp.dest(path.source + 'styles/components'))
                     .on('finish', cb);
             });
         },
