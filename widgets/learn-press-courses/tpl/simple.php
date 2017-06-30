@@ -23,7 +23,7 @@
 			echo '<a href="'.get_term_link( $cat->term_id, 'course_category' ).'" class="latest-courses__cat">'.$cat->name.'</a>'.$comma;
 		}
 	?>
-	<h3 class="latest-courses__title"><a href="<?php the_permalink(  ); ?>"><?php the_title(); ?><</a></h3>
+	<h3 class="latest-courses__title"><a href="<?php the_permalink(  ); ?>"><?php the_title(); ?></a></h3>
 	</header>
 	<footer class="latest-courses__button button-inverted"><div class="thim-widget-button thim-widget-button-base"><a class="widget-button tiny-rounded normal" href="<?php the_permalink(  ); ?>"><?php _e('Scopri', 'uba'); ?></a></div></footer>
 	</li>
