@@ -10,12 +10,12 @@
 	<div class="eduma-magazine__last">
 		<div class="eduma-magazine__item">
 			<div class="eduma-magazine__side">
-				<time class="eduma-magazine__date">
-					<?php the_time( 'd F Y' ); ?>
-				</time>
 				<figure class="eduma-magazine__figure" style="background-image: url(<?php the_post_thumbnail_url('large'); ?>)">
 					<?php the_post_thumbnail('large'); ?>
 				</figure>
+				<time class="eduma-magazine__date">
+					<?php the_time( 'd F Y' ); ?>
+				</time>
 			</div>
 			<div class="eduma-magazine__content">
 				<?php the_category(', '); ?>
@@ -40,12 +40,12 @@
 			<?php while($new_q->have_posts()) : $new_q->the_post(); ?>
 			<div class="eduma-magazine__item">
 				<div class="eduma-magazine__side">
-					<time class="eduma-magazine__date">
-						<?php the_time( 'd F Y' ); ?>
-					</time>
 					<figure class="eduma-magazine__figure" style="background-image: url(<?php the_post_thumbnail_url('large'); ?>)">
 						<?php the_post_thumbnail('large'); ?>
 					</figure>
+					<time class="eduma-magazine__date">
+						<?php the_time( 'd F Y' ); ?>
+					</time>
 				</div>
 				<div class="eduma-magazine__content">
 					<?php the_category(', '); ?>
@@ -71,12 +71,13 @@
 		<div class="eduma-magazine__cell">
 			<div class="eduma-magazine__item">
 				<div class="eduma-magazine__side">
-					<time class="eduma-magazine__date">
-						<?php the_time( 'd F Y' ); ?>
-					</time>
 					<figure class="eduma-magazine__figure" style="background-image: url(<?php the_post_thumbnail_url('large'); ?>)">
 						<?php the_post_thumbnail('large'); ?>
 					</figure>
+					<time class="eduma-magazine__date">
+						<?php the_time( 'd m Y' ); ?>
+					</time>
+				
 				</div>
 				<div class="eduma-magazine__content">
 					<?php the_category(', '); ?>
