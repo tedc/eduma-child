@@ -58,7 +58,7 @@
 		<div class="eduma-magazine__cell">
 			<div class="eduma-magazine__instagram">
 				<header>
-					<a href="<?php echo $instance['instagram_link']); ?>">
+					<a href="<?php echo $instance['instagram_link']; ?>">
 						<i class="fa fa-instagram"></i>
 						<?php echo str_replace(array('https:', '/', 'instagram.com'), '', $instance['instagram_link']); ?>
 					</a>
