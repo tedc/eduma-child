@@ -64,3 +64,5 @@ function search_by_cat($query)
     }
     return $query;
 }
+
+include( locate_template( 'inc/add-icon-image.php', false, true ));
