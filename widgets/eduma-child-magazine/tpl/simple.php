@@ -1,4 +1,4 @@
-<div class="eduma-magazine<?php ($instance['red']) ? ' eduma-magazine--red' : ''; ?>">
+<div class="eduma-magazine<?php echo ($instance['red']) ? ' eduma-magazine--red' : ''; ?>">
 	<?php
 		$sticky = get_option( 'sticky_posts' );
 		$query = new WP_Query(  array(
