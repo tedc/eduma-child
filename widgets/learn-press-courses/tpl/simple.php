@@ -1,4 +1,4 @@
-<div class="latest-courses">
+<div class="latest-courses<?php echo ($instance['white']) ? ' latest-courses--white' : ''; ?>">
 <?php if($instance['title']) { ?>
 
 <?php } 
@@ -11,7 +11,7 @@
 	);
 	if($latest->have_posts()) :
 ?> 
-<div class="latest-courses__list<?php echo ($instance['white']) ? ' latesta-courses__list--white' : ''; ?>">
+<div class="latest-courses__list">
 	<?php while($latest->have_posts()) : $latest->the_post(); ?>
 	<div class="latest-courses__item">
 	<header class="latest-courses__header">
