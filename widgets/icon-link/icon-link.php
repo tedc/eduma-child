@@ -40,6 +40,11 @@ class Icon_Link extends SiteOrigin_Widget  {
 				'color_hover' => array(
 					'type' => 'color',
 					'label' => __('Colore hover', 'uba')
+				),
+				'blank' => array(
+					'type' => 'checkbox',
+					'label' => __('Apri link in nuova finestra', 'uba'),
+					'default' => false
 				)
 			),
 			get_template_directory()
