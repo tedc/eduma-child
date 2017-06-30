@@ -1,5 +1,5 @@
 <div class="eduma-magazine<?php echo ($instance['red']) ? ' eduma-magazine--red' : ''; ?>">
-	<?php var_dump($instace['title']); if($istance['title']) : ?>
+	<?php if($instance['title']) : ?>
 	<h2 class="eduma-magazine__main-title"><a href="<?php echo get_permalink(get_option('page_for_posts')); ?>"><?php echo $instance['title']; ?></a></h2>
 <?php endif; ?>
 	<?php
