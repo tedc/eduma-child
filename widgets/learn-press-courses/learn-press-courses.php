@@ -18,7 +18,7 @@ class Learn_Press_Courses extends SiteOrigin_Widget  {
     function __construct() {
 		parent::__construct(
 			'learn-press-courses',
-			__('Corsi: le categorie', 'siteorigin-panels'),
+			__('Gli ultimi corsi', 'siteorigin-panels'),
 			array(
 				'description' => __('Mostra la lista degli ultimi corsi', 'siteorigin-panels'),
 				'default_style' => 'simple',
