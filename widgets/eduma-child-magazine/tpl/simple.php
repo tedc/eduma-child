@@ -60,7 +60,7 @@
 				<header>
 					<a href="<?php echo $instance['instagram_link']; ?>">
 						<i class="fa fa-instagram"></i>
-						<?php echo str_replace(array('https:', '/', 'instagram.com'), '', $instance['instagram_link']); ?>
+						<?php echo str_replace(array('https:', '/', 'www.instagram.com'), '', $instance['instagram_link']); ?>
 					</a>
 				</header>
 				<?php echo $instance['instagram']; ?>
