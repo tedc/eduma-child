@@ -40,7 +40,7 @@ class Eduma_Child_Magazine extends SiteOrigin_Widget  {
 					'label' => __('Shortcode instagram', 'uba')
 				),
 				'instagram_link' => array(
-					'type' => 'url',
+					'type' => 'text',
 					'label' => __('Link instagram', 'uba')
 				),
 				'red' => array(
