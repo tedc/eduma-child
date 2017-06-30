@@ -62,11 +62,13 @@ class Add_Icon_Image {
 
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-		add_action( 'course_category_add_form_fields', array( $this, 'add_meta_box' ) );
-		add_action( 'edit_course_category',  array( $this, 'save_post' ) );
-		add_action( 'create_course_category',  array( $this, 'save_post' ) );
-		add_action( 'init',  array( $this, 'register_term_meta_text' ) );
-
+		add_action( 'course_category_add_form_fields', array( $this, 'add_form_field_term_meta_icon' ) );
+		add_action( 'course_category_edit_form_fields', array( $this, 'add_form_field_term_meta_icon' ) );
+		add_action( 'edit_course_category',  array( $this, 'save_term_meta_icon' ) );
+		add_action( 'create_course_category',  array( $this, 'save_term_meta_icon' ) );
+		add_action( 'init',  array( $this, 'register_term_meta_icon' ) );
+		add_filter( 'manage_edit-course_category_columns', array( $this, 'edit_term_columns'), 10, 3 );
+		add_filter( 'manage_course_category_custom_column', array( $this, 'manage_term_custom_column'), 10, 3 );
 	}
 
 	/**
@@ -92,11 +94,11 @@ class Add_Icon_Image {
 
 	}
 
-	public function register_term_meta_text($value='') {
-		register_meta( 'term', '__term_meta_text', array( $this, 'sanitize_term_meta_text') );
+	public function register_term_meta_icon($value='') {
+		register_meta( 'term', 'icon-thumbnail-src', array( $this, 'sanitize_term_meta_icon') );
 	}
 
-	public function ___register_term_meta_text($value='') {
+	public function ___register_term_meta_icon($value='') {
 		return sanitize_text_field ($value);
 	}
 
@@ -156,16 +158,73 @@ class Add_Icon_Image {
 
 	}
 
+	public function get_term_meta_icon( $term_id ) {
+	  $value = get_term_meta( $term_id, 'icon-thumbnail-src', true );
+	  $value = ___sanitize_term_meta_icon( $value );
+	  return $value;
+	}
 
-	/**
-	 * Renders the view that displays the contents for the meta box that for triggering
-	 * the meta box.
-	 *
-	 * @param    WP_Post    $post    The post object
-	 * @since    0.1.0
-	 */
-	public function display_featured_icon_image( $post ) {
-		include_once( dirname( __FILE__ ) . '/views/admin.php' );
+	// ADD FIELD TO CATEGORY TERM PAGE
+
+
+	public function add_form_field_term_meta_icon() { 
+	    include_once( dirname( __FILE__ ) . '/views/admin.php' );
+	}
+
+
+	// ADD FIELD TO CATEGORY EDIT PAGE
+
+
+	public function edit_form_field_term_meta_icon( $term ) {
+	    include_once( dirname( __FILE__ ) . '/views/admin.php' );
+	}
+
+
+// SAVE TERM META (on term edit & create)
+
+	public function save_term_meta_icon( $term_id ) {
+
+	    // verify the nonce --- remove if you don't care
+	    if ( ! isset( $_POST['icon-thumbnail-src_nonce'] ) || ! wp_verify_nonce( $_POST['icon-thumbnail-src_nonce'], basename( __FILE__ ) ) )
+	        return;
+
+	    $old_value  = $this->get_term_meta_icon( $term_id );
+	    $new_value = isset( $_POST['icon-thumbnail-src'] ) ? $this->sanitize_term_meta_icon ( $_POST['icon-thumbnail-src'] ) : '';
+
+
+	    if ( $old_value && '' === $new_value )
+	        delete_term_meta( $term_id, 'icon-thumbnail-src' );
+
+	    else if ( $old_value !== $new_value )
+	        update_term_meta( $term_id, 'icon-thumbnail-src', $new_value );
+	}
+
+	// MODIFY COLUMNS (add our meta to the list)
+
+
+	public function edit_term_columns( $columns ) {
+
+	    $columns['icon-thumbnail-src'] = __( 'Icona categoria', 'uba' );
+
+	    return $columns;
+	}
+
+// RENDER COLUMNS (render the meta data on a column)
+
+
+	public function public manage_term_custom_column( $out, $column, $term_id ) {
+
+	    if ( 'icon-thumbnail-src' === $column ) {
+
+	        $value  = ___get_term_meta_icon( $term_id );
+
+	        if ( ! $value )
+	            $value = '';
+
+	        $out = sprintf( '<span class="term-meta-text-block" style="" >%s</div>', esc_attr( $value ) );
+	    }
+
+	    return $out;
 	}
 
 }
