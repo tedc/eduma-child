@@ -14,7 +14,7 @@
 					<?php the_post_thumbnail('large'); ?>
 				</figure>
 				<time class="eduma-magazine__date">
-					<?php the_time( 'd F Y' ); ?>
+					<?php the_time( 'd m Y' ); ?>
 				</time>
 			</div>
 			<div class="eduma-magazine__content">
@@ -44,7 +44,7 @@
 						<?php the_post_thumbnail('large'); ?>
 					</figure>
 					<time class="eduma-magazine__date">
-						<?php the_time( 'd F Y' ); ?>
+						<?php the_time( 'd m Y' ); ?>
 					</time>
 				</div>
 				<div class="eduma-magazine__content">
