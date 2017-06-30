@@ -27,7 +27,7 @@
 	<?php endwhile; wp_reset_query(); ?>
 	<div class="eduma-magazine__grid">
 	<?php
-		$num = ($instance['number']) ? $instance['number'] : 2
+		$num = ($instance['number']) ? $instance['number'] : 2;
 		$new_q = new WP_Query(
 			array(	
 				'ignore_sticky_posts' => 1,
