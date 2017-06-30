@@ -30,3 +30,4 @@
 	<?php endwhile; wp_reset_query(); ?>
 </ul>
 <?php endif; ?>
+</div>
