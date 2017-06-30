@@ -35,6 +35,11 @@ class Learn_Press_Courses extends SiteOrigin_Widget  {
 					// TRANSLATORS: Uniform Resource Locator
 					'label' => __('Quantità', 'siteorigin-panels'),
 				),
+				'white' => array(
+					'type' => 'checkbox',
+					'label' => __('Bianco a lato', 'uba'),
+					'default' => true
+				)
 			),
 			get_template_directory()
 		);		

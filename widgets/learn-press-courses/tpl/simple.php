@@ -11,7 +11,7 @@
 	);
 	if($latest->have_posts()) :
 ?> 
-<div class="latest-courses__list">
+<div class="latest-courses__list<?php echo ($instance['white']) ? ' latesta-courses__list--white' : ''; ?>">
 	<?php while($latest->have_posts()) : $latest->the_post(); ?>
 	<div class="latest-courses__item">
 	<header class="latest-courses__header">
