@@ -98,7 +98,7 @@ class Add_Icon_Image {
 		register_meta( 'term', 'icon-thumbnail-src', array( $this, 'sanitize_term_meta_icon') );
 	}
 
-	public function ___register_term_meta_icon($value='') {
+	public function sanitize_term_meta_icon($value='') {
 		return sanitize_text_field ($value);
 	}
 
@@ -160,7 +160,7 @@ class Add_Icon_Image {
 
 	public function get_term_meta_icon( $term_id ) {
 	  $value = get_term_meta( $term_id, 'icon-thumbnail-src', true );
-	  $value = ___sanitize_term_meta_icon( $value );
+	  $value = $this->sanitize_term_meta_icon( $value );
 	  return $value;
 	}
 
