@@ -216,7 +216,7 @@ class Add_Icon_Image {
 
 	    if ( 'icon-thumbnail-src' === $column ) {
 
-	        $value  = ___get_term_meta_icon( $term_id );
+	        $value  = $this->get_term_meta_icon( $term_id );
 
 	        if ( ! $value )
 	            $value = '';
