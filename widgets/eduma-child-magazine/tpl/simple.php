@@ -1,12 +1,11 @@
 <div class="eduma-magazine<?php ($instance['red']) ? ' eduma-magazine--red' : ''; ?>">
 	<?php
 		$sticky = get_option( 'sticky_posts' );
-		$args = array(
+		$query = new WP_Query(  array(
 			'posts_per_page' => 1,
 			'post__in'  => $sticky,
 			'ignore_sticky_posts' => 1
-		);
-		$query = new WP_Query( $args );
+		); );
 		while($query->have_posts()) : $query->the_post(); ?>
 	<div class="eduma-magazine__last">
 		<div class="eduma-magazine__item">
