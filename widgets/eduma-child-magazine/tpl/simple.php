@@ -26,12 +26,13 @@
 	</div>
 	<?php endwhile; wp_reset_query(); ?>
 	<div class="eduma-magazine__grid">
-	<?php 
+	<?php
+		$num = ($instance['number']) ? $instance['number'] : 2
 		$new_q = new WP_Query(
 			array(	
 				'ignore_sticky_posts' => 1,
 				'post__not_in' => $sticky,
-				'posts_per_page' => $instance['number'] || 2
+				'posts_per_page' => $num
 			)
 		);
 		if($instance['instagram']) : ?>
