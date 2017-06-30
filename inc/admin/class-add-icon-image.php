@@ -212,7 +212,7 @@ class Add_Icon_Image {
 // RENDER COLUMNS (render the meta data on a column)
 
 
-	public function public manage_term_custom_column( $out, $column, $term_id ) {
+	public function manage_term_custom_column( $out, $column, $term_id ) {
 
 	    if ( 'icon-thumbnail-src' === $column ) {
 
