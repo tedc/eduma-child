@@ -113,7 +113,7 @@ class Add_Icon_Image {
 
 		wp_enqueue_script(
 			$this->name,
-			plugin_dir_url( __FILE__ ) . 'js/admin.js',
+			get_stylesheet_directory_uri() . '/inc/admin/js/admin.js',
 			array( 'jquery' ),
 			$this->version,
 			'all'
@@ -130,7 +130,7 @@ class Add_Icon_Image {
 
 		wp_enqueue_style(
 			$this->name,
-			plugin_dir_url( __FILE__ ) . 'css/admin.css',
+			get_stylesheet_directory_uri() . '/inc/admin/css/admin.css',
 			array()
 		);
 
