@@ -66,3 +66,18 @@ function search_by_cat($query)
 }
 
 include( locate_template( 'inc/add-icon-image.php', false, true ));
+
+
+function my_learn_press_before_single_course() {
+    echo '<div class="course-single-wrapper"><div class="course-single-left">';
+}
+
+function my_learn_press_after_single_course() {
+    echo '</div>';
+    thim_course_info();
+    echo '</div>';
+    thim_related_courses();
+}
+
+add_action('learn_press_before_single_course', 'my_learn_press_before_single_course');
+add_action('learn_press_after_single_course', 'my_learn_press_after_single_course');
