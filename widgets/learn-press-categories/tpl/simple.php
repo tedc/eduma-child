@@ -25,6 +25,9 @@
 			<img src="<?php echo $image[0]; ?>"  class="learn-press-categories__image" />
 		</figure>
 		<div class="learn-press-categories__content">
+		<?php if(get_term_meta($term->id, 'icon-thumbnail-src', true)):?>
+			<img src="<?php echo get_term_meta($term->id, 'icon-thumbnail-src', true); ?>">
+		<?php endif; ?>
 		<h3 class="learn-press-categories__title"><?php echo $term->name; ?></h3>
 		<a href="<?php echo get_term_link( $term->term_id); ?>" class="learn-press-categories__button"><?php _e('Scopri', 'uba'); ?></a>
 		</div>

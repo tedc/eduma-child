@@ -140,6 +140,8 @@ function renderFeaturedImage( $ ) {
 	 */
 	if ( '' !== $.trim ( $( '#icon-thumbnail-src' ).val() ) ) {
 
+		console.log(true);
+
 		$( '#featured-icon-image-container' ).removeClass( 'hidden' );
 
 		$( '#set-icon-thumbnail' )
