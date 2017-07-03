@@ -20,7 +20,7 @@
 	<div class="learn-press-categories__cell learn-press-categories__cell--term">
 		<?php
 			$img_id = get_term_meta( $term->term_id, 'thim_learnpress_top_image', true )['id'];
-			var_dump(get_term_meta( $term->term_id, 'thim_learnpress_top_image', true ));
+			var_dump($img_id);
 			$image = wp_get_attachment_image_src( $img_id, 'large', false ); ?>
 		<figure class="learn-press-categories__figure" style="background-image: url(<?php echo $image[0]; ?>)">
 			<img src="<?php echo $image[0]; ?>"  class="learn-press-categories__image" />
