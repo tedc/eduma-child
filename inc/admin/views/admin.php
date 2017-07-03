@@ -7,7 +7,7 @@
 </div><!-- #featured-icon-image-container -->
 
 <p class="hide-if-no-js hidden">
-	<a title="Remove Footer Image" href="javascript:;" id="remove-icon-thumbnail" class="button simplePanelimageUpload"><?php _e('Rimuovi cona categoria', 'uba'); ?></a>
+	<a title="Remove Footer Image" href="javascript:;" id="remove-icon-thumbnail" class="button simplePanelimageUploadclear"><?php _e('Rimuovi cona categoria', 'uba'); ?></a>
 </p><!-- .hide-if-no-js -->
 
 <p id="featured-icon-image-info">
