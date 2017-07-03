@@ -19,13 +19,10 @@
 	?>
 	<div class="learn-press-categories__cell learn-press-categories__cell--term">
 		<?php
-			$img_id = get_term_meta( $term->term_id, 'thim_learnpress_top_image', true )['id'];
-			var_dump($img_id);
-			$image = wp_get_attachment_image_src( intval($img_id), 'large', false );
-			var_dump($image);
+			$image = get_term_meta( $term->term_id, 'thim_learnpress_top_image', true )['url'];
 		?>
-		<figure class="learn-press-categories__figure" style="background-image: url(<?php echo $image[0]; ?>)">
-			<img src="<?php echo $image[0]; ?>"  class="learn-press-categories__image" />
+		<figure class="learn-press-categories__figure" style="background-image: url(<?php echo $image; ?>)">
+			<img src="<?php echo $image; ?>"  class="learn-press-categories__image" />
 		</figure>
 		<div class="learn-press-categories__content">
 		<?php if(get_term_meta($term->id, 'icon-thumbnail-src', true)):?>
