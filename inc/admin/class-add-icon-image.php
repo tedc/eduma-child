@@ -167,7 +167,7 @@ class Add_Icon_Image {
 	// ADD FIELD TO CATEGORY TERM PAGE
 
 
-	public function add_form_field_term_meta_icon() { 
+	public function add_form_field_term_meta_icon( $term ) { 
 	    include_once( dirname( __FILE__ ) . '/views/admin.php' );
 	}
 
