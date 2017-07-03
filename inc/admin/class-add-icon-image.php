@@ -185,8 +185,6 @@ class Add_Icon_Image {
 	public function save_term_meta_icon( $term_id ) {
 
 	    // verify the nonce --- remove if you don't care
-	    if ( ! isset( $_POST['icon-thumbnail-src_nonce'] ) || ! wp_verify_nonce( $_POST['icon-thumbnail-src_nonce'], basename( __FILE__ ) ) )
-	        return;
 
 	    $old_value  = $this->get_term_meta_icon( $term_id );
 	    $new_value = isset( $_POST['icon-thumbnail-src'] ) ? $this->sanitize_term_meta_icon ( $_POST['icon-thumbnail-src'] ) : '';
