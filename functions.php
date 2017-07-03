@@ -73,9 +73,10 @@ function my_learn_press_before_single_course() {
 }
 
 function my_learn_press_after_single_course() {
-    echo '</div>';
+    echo '</div><aside class="course-single-aside">';
     thim_course_info();
-    echo '</div>';
+    learn_press_course_buttons();
+    echo '</aside></div>';
     thim_related_courses();
 }
 
