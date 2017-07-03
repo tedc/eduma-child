@@ -3,7 +3,7 @@
 </p>
 
 <div id="featured-icon-image-container" class="hidden">
-	<img src="<?php echo get_term_meta( $term->term_id, 'icon-thumbnail-src', true ); ?>" title="<?php echo get_term_meta( $term->term_id, 'icon-thumbnail-title', true ); ?>" />
+	<img src="<?php if(!empty($term)) { echo get_term_meta( $term->term_id, 'icon-thumbnail-src', true ); } ?>" />
 </div><!-- #featured-icon-image-container -->
 
 <p class="hide-if-no-js hidden">

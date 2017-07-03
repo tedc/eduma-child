@@ -80,8 +80,6 @@ function renderMediaUploader( $ ) {
 
 		// Store the image's information into the meta data fields
 		$( '#icon-thumbnail-src' ).val( json.url );
-		$( '#icon-thumbnail-title' ).val( json.title );
-		$( '#icon-thumbnail-alt' ).val( json.title );
 
 	});
 
