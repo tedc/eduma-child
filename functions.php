@@ -77,6 +77,7 @@ function my_learn_press_after_single_course() {
     thim_course_info();
     learn_press_course_buttons();
     echo '</aside></div>';
+    do_action( 'thim_social_share' );
     thim_related_courses();
 }
 

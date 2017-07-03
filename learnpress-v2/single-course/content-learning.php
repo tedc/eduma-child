@@ -67,7 +67,6 @@ $student_list_enable = thim_plugin_active( 'learnpress-students-list/learnpress-
 					<?php the_content(); ?>
 				</div>
 				<?php do_action( 'learn_press_end_course_content_course_description' ); ?>
-				<?php do_action( 'thim_social_share' ); ?>
 			</div>
 			<div class="tab-pane active" id="tab-course-curriculum">
 				<?php learn_press_course_curriculum(); ?>
