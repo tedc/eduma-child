@@ -75,7 +75,28 @@ function my_learn_press_before_single_course() {
 function my_learn_press_after_single_course() {
     $course = LP()->global['course'];
     $user   = learn_press_get_current_user();
+
     $is_enrolled      = $user->has( 'enrolled-course', $course->id );
+    $require_enrolled = $course->is_require_enrollment();
+
+    $buy_through_membership      = LP()->settings->get( 'buy_through_membership' );
+
+    $list_course_membership = array();
+    $hidden_price = false;
+
+    if( function_exists('learn_press_pmpro_check_require_template')) {
+        $membership_list = learn_press_pmpro_check_require_template();
+        $list_course_membership = $membership_list['list_courses'];
+    }
+    if( !empty($list_course_membership)) {
+        if( array_key_exists($course->id, $list_course_membership ) ) {
+            $hidden_price = true;
+        }
+    }
+
+    if( !empty( $buy_through_membership )  && $buy_through_membership == 'no' ) {
+        $hidden_price = false;
+    }
     echo '</div><aside class="course-single-aside">';
     thim_course_info();
     if ( !$is_enrolled ) { ?>
