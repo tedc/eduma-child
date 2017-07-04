@@ -69,7 +69,7 @@ include( locate_template( 'inc/add-icon-image.php', false, true ));
 
 
 function my_learn_press_before_single_course() {
-    echo '<div class="course-single-wrapper"><div class="course-single-left">';
+    //echo '<div class="course-single-wrapper"><div class="course-single-left">';
 }
 
 function my_learn_press_after_single_course() {
