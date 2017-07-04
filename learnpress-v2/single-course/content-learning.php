@@ -60,7 +60,7 @@ $student_list_enable = thim_plugin_active( 'learnpress-students-list/learnpress-
 			<?php endif; ?>
 		</ul>
 
-		<div class="tab-content">
+		<!-- <div class="tab-content">
 			<div class="tab-pane" id="tab-course-description">
 				<?php do_action( 'learn_press_begin_course_content_course_description' ); ?>
 				<div class="thim-course-content">
@@ -84,7 +84,7 @@ $student_list_enable = thim_plugin_active( 'learnpress-students-list/learnpress-
 					<?php learn_press_course_students_list(); ?>
 				</div>
 			<?php endif; ?>
-		</div>
+		</div> -->
 	</div>
 </div>
 

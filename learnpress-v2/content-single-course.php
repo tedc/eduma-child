@@ -44,6 +44,7 @@ if( !empty( $buy_through_membership )  && $buy_through_membership == 'no' ) {
 ?>
 
 <?php do_action( 'learn_press_before_main_content' ); ?>
+<header class="course-single-header">
 <?php the_title( '<h1 class="entry-title" itemprop="name">', '</h1>' ); ?>
 <?php if ( !$is_enrolled ) { ?>
 	<div class="course-payment">
@@ -57,6 +58,7 @@ if( !empty( $buy_through_membership )  && $buy_through_membership == 'no' ) {
 		?>
 	</div>
 <?php } ?>
+</header>
 <?php do_action( 'learn_press_before_single_course' ); ?>
 
 
