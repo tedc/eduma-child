@@ -69,10 +69,9 @@ if( !empty( $buy_through_membership )  && $buy_through_membership == 'no' ) {
 		?>
 	</div>
 <?php } ?>
-
-<?php learn_press_get_template( 'single-course/thumbnail.php', array() ); ?>
 <div class="course-single-wrapper">
 <div class="course-single-left">
+<?php learn_press_get_template( 'single-course/thumbnail.php', array() ); ?>
 <div class="course-summary">
 
 	<?php if ( $is_enrolled || $user->has_course_status( $course->id, array( 'enrolled', 'finished' ) ) || !$require_enrolled ) { ?>
