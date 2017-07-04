@@ -73,6 +73,7 @@ function my_learn_press_before_single_course() {
 }
 
 function my_learn_press_after_single_course() {
+    $course = LP()->global['course'];
     $user   = learn_press_get_current_user();
     $is_enrolled      = $user->has( 'enrolled-course', $course->id );
     echo '</div><aside class="course-single-aside">';
