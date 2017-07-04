@@ -1,35 +1,38 @@
 <?php
 /**
- * Template for displaying content of learning course
+ * Template for displaying content of landing course
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if ( !defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
+$course = LP()->global['course'];
+$user   = learn_press_get_current_user();
 $review_is_enable = thim_plugin_active( 'learnpress-course-review/learnpress-course-review.php' );
 $student_list_enable = thim_plugin_active( 'learnpress-students-list/learnpress-students-list.php' );
+
 ?>
 
-<?php do_action( 'learn_press_before_content_learning' );?>
+<?php do_action( 'learn_press_before_content_landing' ); ?>
 
-<div class="course-learning-summary">
+<div class="course-landing-summary">
 
-	<?php do_action( 'learn_press_content_learning_summary' ); ?>
+	<?php do_action( 'learn_press_content_landing_summary' ); ?>
 
 </div>
-<div id="course-learning">
 
+<div id="course-landing">
 	<div class="course-tabs">
 
 		<ul class="nav nav-tabs">
-			<li role="presentation">
+			<li class="active">
 				<a href="#tab-course-description" data-toggle="tab">
 					<i class="fa fa-bookmark"></i>
 					<span><?php esc_html_e( 'Description', 'eduma' ); ?></span>
 				</a>
 			</li>
-			<li class="active">
+			<li role="presentation">
 				<a href="#tab-course-curriculum" data-toggle="tab">
 					<i class="fa fa-cube"></i>
 					<span><?php esc_html_e( 'Curriculum', 'eduma' ); ?></span>
@@ -61,14 +64,14 @@ $student_list_enable = thim_plugin_active( 'learnpress-students-list/learnpress-
 		</ul>
 
 		<div class="tab-content">
-			<div class="tab-pane" id="tab-course-description">
+			<div class="tab-pane active" id="tab-course-description">
 				<?php do_action( 'learn_press_begin_course_content_course_description' ); ?>
 				<div class="thim-course-content">
 					<?php the_content(); ?>
 				</div>
 				<?php do_action( 'learn_press_end_course_content_course_description' ); ?>
 			</div>
-			<div class="tab-pane active" id="tab-course-curriculum">
+			<div class="tab-pane" id="tab-course-curriculum">
 				<?php learn_press_course_curriculum(); ?>
 			</div>
 			<div class="tab-pane" id="tab-course-instructor">
@@ -85,7 +88,10 @@ $student_list_enable = thim_plugin_active( 'learnpress-students-list/learnpress-
 				</div>
 			<?php endif; ?>
 		</div>
+
 	</div>
+
+	
 </div>
 
-<?php do_action( 'learn_press_after_content_learning' );?>
+<?php do_action( 'learn_press_after_content_landing' ); ?>
