@@ -44,19 +44,7 @@ if( !empty( $buy_through_membership )  && $buy_through_membership == 'no' ) {
 ?>
 
 <?php do_action( 'learn_press_before_main_content' ); ?>
-
-<?php do_action( 'learn_press_before_single_course' ); ?>
-
 <?php the_title( '<h1 class="entry-title" itemprop="name">', '</h1>' ); ?>
-
-<div class="course-meta">
-	<?php learn_press_course_instructor(); ?>
-	<?php learn_press_course_categories(); ?>
-	<?php thim_course_forum_link(); ?>
-	<?php thim_course_ratings(); ?>
-	<?php learn_press_course_progress(); ?>
-</div>
-
 <?php if ( !$is_enrolled ) { ?>
 	<div class="course-payment">
 		<?php
@@ -69,8 +57,17 @@ if( !empty( $buy_through_membership )  && $buy_through_membership == 'no' ) {
 		?>
 	</div>
 <?php } ?>
-<div class="course-single-wrapper">
-<div class="course-single-left">
+<?php do_action( 'learn_press_before_single_course' ); ?>
+
+
+<div class="course-meta">
+	<?php learn_press_course_instructor(); ?>
+	<?php learn_press_course_categories(); ?>
+	<?php thim_course_forum_link(); ?>
+	<?php thim_course_ratings(); ?>
+	<?php learn_press_course_progress(); ?>
+</div>
+
 <?php learn_press_get_template( 'single-course/thumbnail.php', array() ); ?>
 <div class="course-summary">
 
