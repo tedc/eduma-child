@@ -75,7 +75,18 @@ function my_learn_press_before_single_course() {
 function my_learn_press_after_single_course() {
     echo '</div><aside class="course-single-aside">';
     thim_course_info();
-    learn_press_course_buttons();
+    if ( !$is_enrolled ) { ?>
+    <div class="course-payment">
+        <?php
+
+        if ( ( $course->is_free() || !$user->can( 'enroll-course', $course->id ) ) && !$hidden_price ) {
+            learn_press_course_price();
+        }
+        learn_press_course_buttons();
+
+        ?>
+    </div>
+    <?php } 
     echo '</aside></div>';
     do_action( 'thim_social_share' );
     thim_related_courses();
