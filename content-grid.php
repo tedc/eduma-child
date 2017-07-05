@@ -2,7 +2,6 @@
 $theme_options_data = get_theme_mods();
 
 $classes            = array();
-$classes[]          = 'blog-grid-3';
 $classes[]			= 'eduma-magazine__cell';
 $theme_options_data = get_theme_mods();
 $show_author        = !empty( $theme_options_data['thim_show_author'] ) && $theme_options_data['thim_show_author'] == '1';
