@@ -123,7 +123,7 @@ add_action('learn_press_after_single_course', 'my_learn_press_after_single_cours
 function current_user() {
     if(is_user_logged_in()) {
         $current = wp_get_current_user();
-        $name =  $current->user_firstname;
+        $name = ($current->user_firstname) ? $current->user_firstname : $current->user_login;
         $avatar = get_avatar_url($current->ID);
         echo '<style>#masthead .thim-widget-login-popup a.profile:before {content:"'.$name.'"}#masthead .thim-widget-login-popup a.profile:after {background-image: url('.$avatar.');}</style>';
     }
