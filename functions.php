@@ -144,3 +144,8 @@ function append_bottom_course() {
     }
 }
 add_action( 'learn_press_after_single_course', 'append_bottom_course');
+
+function custom_excerpt_length( $length ) {
+    return 10;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
