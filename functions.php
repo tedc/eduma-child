@@ -118,3 +118,14 @@ function my_learn_press_after_single_course() {
 
 add_action('learn_press_before_single_course', 'my_learn_press_before_single_course');
 add_action('learn_press_after_single_course', 'my_learn_press_after_single_course');
+
+
+function current_user() {
+    if(is_user_logged_in()) {
+        $current = wp_get_current_user();
+        $name =  $current->user_firstname;
+        $avatar = get_avatar_url($current->ID);
+        echo '<style>.profile:before {content:"'.$name.'"}.profile:after {background-image: url('.$avatar.');}</style>';
+    }
+}
+add_action( 'wp_head', 'current_user' );
