@@ -125,7 +125,7 @@ function current_user() {
         $current = wp_get_current_user();
         $name =  $current->user_firstname;
         $avatar = get_avatar_url($current->ID);
-        echo '<style>.profile:before {content:"'.$name.'"}.profile:after {background-image: url('.$avatar.');}</style>';
+        echo '<style>#masthead .thim-widget-login-popup a.profile:before {content:"'.$name.'"}#masthead .thim-widget-login-popup a.profile:after {background-image: url('.$avatar.');}</style>';
     }
 }
 add_action( 'wp_head', 'current_user' );
