@@ -129,3 +129,18 @@ function current_user() {
     }
 }
 add_action( 'wp_head', 'current_user' );
+
+register_sidebar(
+     array(
+        'id'          => 'bottom-course',
+        'name'        => __( 'Elementi in fondo al corso', 'uba' ),
+        'description' => __( 'Widget per inserire gli elementi in fondo al corso (ie: la fascia con la newsletter).', 'uba' ),
+    )
+);
+
+function append_bottom_course() {
+    if(is_active_sidebar('bottom-course')) {
+        dynamic_sidebar('bottom-course');
+    }
+}
+add_action( 'learn_press_after_single_course', 'append_newsletter_widget');

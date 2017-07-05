@@ -90,8 +90,6 @@ $student_list_enable = thim_plugin_active( 'learnpress-students-list/learnpress-
 		</div>
 
 	</div>
-
-	
 </div>
 
 <?php do_action( 'learn_press_after_content_landing' ); ?>
