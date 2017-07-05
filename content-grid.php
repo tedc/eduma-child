@@ -22,6 +22,7 @@ $show_comment       = !empty( $theme_options_data['thim_show_comment'] ) && $the
 		<div class="eduma-magazine__content">
 			<?php the_category(', '); ?>
 			<h3 class="eduma-magazine__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+			<?php the_excerpt(); ?>
 			<a href="<?php the_permalink(  ); ?>" class="eduma-magazine__more"><?php _e('Leggi tutto', 'uba'); ?></a>
 		</div>
 	</div>
