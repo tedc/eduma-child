@@ -143,4 +143,4 @@ function append_bottom_course() {
         dynamic_sidebar('bottom-course');
     }
 }
-add_action( 'learn_press_after_single_course', 'append_newsletter_widget');
+add_action( 'learn_press_after_single_course', 'append_bottom_course');
