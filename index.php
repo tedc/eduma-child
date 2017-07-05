@@ -3,7 +3,7 @@ $class_archive = '';
 $archive_layout = get_theme_mod( 'thim_archive_cate_display_layout' );
 $layout_type   = !empty( $archive_layout ) ? 'grid' : '';
 if ( $layout_type == 'grid' ) {
-	$class_archive = ' blog-switch-layout blog-list';
+	//$class_archive = ' blog-switch-layout blog-list';
 	global $post, $wp_query;
 
 	if ( is_category() ) {
@@ -48,13 +48,7 @@ if ( $layout_type == 'grid' ) {
 if ( have_posts() ) :?>
 	<div id="blog-archive" class="blog-content<?php echo esc_attr( $class_archive ); ?>">
 		<?php if ( $layout_type == 'grid' ): ?>
-			<div class="thim-blog-top switch-layout-container">
-				<div class="switch-layout">
-					<a href="#" class="list switchToGrid  switch-active"><i class="fa fa-th-large"></i></a>
-					<a href="#" class="grid switchToList"><i class="fa fa-list-ul"></i></a>
-				</div>
-				<div class="post-index"><?php echo esc_html( $index ); ?></div>
-			</div>
+			
 			<div class="row">
 				<div class="eduma-magazine">
 					<div class="eduma-magazine__grid">
