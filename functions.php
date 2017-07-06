@@ -57,7 +57,7 @@ function search_by_cat($query)
             array(
                 'taxonomy' => 'course_category',
                 'field' => 'id',
-                'terms' => array( 96 ),
+                'terms' => array( $cat ),
                 'operator'=> 'AND'
             )
         );
