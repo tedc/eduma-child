@@ -51,16 +51,17 @@ add_filter('siteorigin_panels_widget_dialog_tabs', 'mytheme_add_widget_tabs', 20
 add_action('pre_get_posts', 'search_by_cat');
 function search_by_cat($query)
 {
-    var_dump($query);
-    $cat = intval($_GET['course_category']);
-    $arr = ($cat > 0) ? array(
-        array(
-            'taxonomy' => 'course_category',
-            'field' => 'term_id',
-            'term' => $cat
-        )
-    ) : false;
-    $query->set('tax_query', $arr);
+    if ($query->is_search) {var_dump($query);
+        $cat = intval($_GET['course_category']);
+        $arr = ($cat > 0) ? array(
+            array(
+                'taxonomy' => 'course_category',
+                'field' => 'term_id',
+                'term' => $cat
+            )
+        ) : false;
+        $query->set('tax_query', $arr);
+    }
 }
 
 include( locate_template( 'inc/add-icon-image.php', false, true ));
