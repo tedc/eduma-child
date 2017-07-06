@@ -57,7 +57,7 @@ function search_by_cat($query)
             array(
                 'taxonomy' => 'course_category',
                 'field' => 'term_id',
-                'term' => $cat
+                'terms' => array($cat)
             )
         ) : false;
         $query->set('tax_query', $arr);
