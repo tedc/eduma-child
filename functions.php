@@ -61,7 +61,9 @@ function search_by_cat($query)
                 'operator'=> 'AND'
             )
         );
-        $query->set('tax_query', $taxquery);
+        if($cat > 0) {
+            $query->set('tax_query', $taxquery);
+        }
     }
 }
 
