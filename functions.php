@@ -56,7 +56,7 @@ function search_by_cat($query)
         $arr = ($cat > 0) ? array(
             array(
                 'taxonomy' => 'course_category',
-                'field' => 'term_id',
+                'field' => 'id',
                 'terms' => array($cat)
             )
         ) : false;
