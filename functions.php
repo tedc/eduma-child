@@ -52,7 +52,7 @@ add_action('pre_get_posts', 'search_by_cat');
 function search_by_cat($query)
 {
     if ($query->is_search) {
-        $cat = intval($_GET['course_category']);
+        $cat = intval($_GET['cat']);
         $taxquery = array(
             array(
                 'taxonomy' => 'course_category',
