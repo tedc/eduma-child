@@ -4,7 +4,7 @@
 		<div class="courses-search__value">
 			<div class="courses-search__text"><?php _e('Seleziona categoria', 'uba'); ?></div>
 		</div>
-		<select name="cat">
+		<select name="ref_term">
 			<option value="0"><?php _e('Seleziona categoria', 'uba'); ?></option>
 			<?php 
 				$terms = get_terms(
