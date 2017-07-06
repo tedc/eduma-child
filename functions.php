@@ -48,7 +48,7 @@ add_filter('siteorigin_panels_widget_dialog_tabs', 'mytheme_add_widget_tabs', 20
 // }
 // add_shortcode( 'search-courses', 'search_shortcode' );
 
-//add_action('pre_get_posts', 'search_by_cat');
+add_action('pre_get_posts', 'search_by_cat');
 function search_by_cat($query)
 {
     if (is_page(get_option('learn_press_courses_page_id'))) {
@@ -60,9 +60,8 @@ function search_by_cat($query)
         		'term' => $cat
         	)
         ) : false;
-        $query->query_vars['tax_query'] = $arr;
+        $query->set('tax_query', $arr);
     }
-    return $query;
 }
 
 include( locate_template( 'inc/add-icon-image.php', false, true ));
