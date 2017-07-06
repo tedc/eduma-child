@@ -52,6 +52,7 @@ add_action('pre_get_posts', 'search_by_cat');
 function search_by_cat($query)
 {
     if (is_page(get_option('learn_press_courses_page_id'))) {
+        var_dump($query);
         $cat = intval($_GET['course_category']);
         $arr = ($cat > 0) ? array(
         	array(
