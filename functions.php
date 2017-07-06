@@ -53,14 +53,15 @@ function search_by_cat($query)
 {
     if ($query->is_search) {
         $cat = intval($_GET['course_category']);
-        $arr = ($cat > 0) ? array(
+        $taxquery = array(
             array(
                 'taxonomy' => 'course_category',
                 'field' => 'id',
-                'terms' => array($cat)
+                'terms' => array( 96 ),
+                'operator'=> 'AND'
             )
-        ) : false;
-        $query->set('tax_query', $arr);
+        );
+        $query->set('tax_query', $taxquery);
         var_dump($query);
     }
 }
