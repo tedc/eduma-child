@@ -51,6 +51,7 @@ add_filter('siteorigin_panels_widget_dialog_tabs', 'mytheme_add_widget_tabs', 20
 add_action('pre_get_posts', 'search_by_cat');
 function search_by_cat($query)
 {
+    return;
     if ($query->is_search) {
         $cat = intval($_GET['cat']);
         $taxquery = array(
