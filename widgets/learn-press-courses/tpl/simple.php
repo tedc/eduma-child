@@ -2,23 +2,8 @@
 <?php if($instance['title']) { ?>
 
 <?php }
-	if($instance['courses']) {
-		$latest = new WP_Query(
-			array(
-				'post_type' => 'lp_course',
-				'post__in' => $instance['courses'],
-				'posts_per_page' => count($instance['courses'])
-			)
-		);
-	} else {
-		$per_page = ($instance['number']) ? $instance['number'] : 3;
-		$latest = new WP_Query(
-			array(
-				'post_type' => 'lp_course',
-				'posts_per_page' => $per_page
-			)
-		);
-	}
+	$processed_posts(siteorigin_widget_post_selector_process_query($instance['courses']));
+	$latest = new WP_Query($processed_posts);
 	if($latest->have_posts()) :
 ?> 
 <div class="latest-courses__list">
