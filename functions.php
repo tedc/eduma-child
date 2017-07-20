@@ -151,3 +151,10 @@ function custom_excerpt_length( $length ) {
     return 10;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+
+function fix_output($output, $id) {
+    var_dump($output, $id);
+    return $output;
+}
+add_filter( 'learn_press_single_course_params', 'fix_output', 100, 2 );
