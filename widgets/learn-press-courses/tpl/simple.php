@@ -2,7 +2,7 @@
 <?php if($instance['title']) { ?>
 
 <?php }
-	$processed_posts(siteorigin_widget_post_selector_process_query($instance['courses']));
+	$processed_posts = siteorigin_widget_post_selector_process_query($instance['courses']);
 	$latest = new WP_Query($processed_posts);
 	if($latest->have_posts()) :
 ?> 
