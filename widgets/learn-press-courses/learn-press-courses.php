@@ -44,7 +44,6 @@ class Learn_Press_Courses extends SiteOrigin_Widget  {
 					'type' => 'posts',
 					'label' => __('Seleziona i corsi', 'uba')
 				)
-				)
 			),
 			get_template_directory()
 		);		
