@@ -39,6 +39,11 @@ class Learn_Press_Courses extends SiteOrigin_Widget  {
 					'type' => 'checkbox',
 					'label' => __('Bianco a lato', 'uba'),
 					'default' => true
+				),
+				'courses' => array(
+					'type' => 'posts',
+					'label' => __('Seleziona i corsi', 'uba')
+				)
 				)
 			),
 			get_template_directory()
