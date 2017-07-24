@@ -31,11 +31,12 @@
 		</div>
 	</div>
 	<?php endwhile; wp_reset_query();
-	var_dump($first);
 	 ?>
 	<div class="eduma-magazine__grid">
 	<?php
 		$num = ($instance['number']) ? $instance['number'] : 2;
+		var_dump($first, $num);
+	
 		$new_q = new WP_Query(
 			array(	
 				'post__not_in' => $first,
