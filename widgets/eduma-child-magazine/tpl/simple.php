@@ -38,7 +38,6 @@
 		$num = ($instance['number']) ? $instance['number'] : 2;
 		$new_q = new WP_Query(
 			array(	
-				'ignore_sticky_posts' => 1,
 				'post__not_in' => $first,
 				'posts_per_page' => $num
 			)
