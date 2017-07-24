@@ -3,7 +3,7 @@
 	<h2 class="eduma-magazine__main-title"><a href="<?php echo get_permalink(get_option('page_for_posts')); ?>"><?php echo $instance['title']; ?></a></h2>
 <?php endif; ?>
 	<?php
-		$first = '';
+		$first = array();
 		$sticky = get_option( 'sticky_posts' );
 		$query = new WP_Query(  array(
 			'posts_per_page' => 1,
@@ -11,7 +11,7 @@
 			'ignore_sticky_posts' => 1
 		));
 		while($query->have_posts()) : $query->the_post();
-		$first = get_the_ID();
+		array_push($first, get_the_ID());
 	 ?>
 	<div class="eduma-magazine__last">
 		<div class="eduma-magazine__item">
