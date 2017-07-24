@@ -57,7 +57,7 @@ $classes[] = 'col-sm-12';
 						<div class="date-meta">
 							<?php
 							if ( !empty( $theme_options_data['thim_blog_display_year'] ) ) {
-								echo get_the_date( 'd' ) . '<i>' . get_the_date( 'M, Y' ) . '</i>';
+								echo get_the_date( 'd' ) . '<i>' . get_the_date( 'M Y' ) . '</i>';
 							} else {
 								echo get_the_date( "d\<\i\>\ F\<\/\i\>\ " );
 							}
@@ -89,7 +89,7 @@ $classes[] = 'col-sm-12';
 						<div class="date-meta">
 							<?php
 							if ( !empty( $theme_options_data['thim_blog_display_year'] ) ) {
-								echo get_the_date( 'd' ) . '<i>' . get_the_date( 'M, Y' ) . '</i>';
+								echo get_the_date( 'd' ) . '<i>' . get_the_date( 'F Y' ) . '</i>';
 							} else {
 								echo get_the_date( "d\<\i\>\ F\<\/\i\>\ " );
 							}
