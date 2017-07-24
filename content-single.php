@@ -30,20 +30,7 @@ $theme_options_data = get_theme_mods();
 			) );
 			?>
 		</div>
-		<div class="entry-tag-share">
-			<div class="row">
-				<div class="col-sm-6">
-					<?php
-					if ( get_the_tag_list() ) {
-						echo get_the_tag_list( '<p class="post-tag"><span>' . esc_html__( "Tag:", 'eduma' ) . '</span>', ', ', '</p>' );
-					}
-					?>
-				</div>
-				<div class="col-sm-6">
-					<?php do_action( 'thim_social_share' ); ?>
-				</div>
-			</div>
-		</div>
+		<?php do_action( 'thim_social_share' ); ?>
 		<?php //do_action( 'thim_about_author' ); ?>
 
 		<?php
