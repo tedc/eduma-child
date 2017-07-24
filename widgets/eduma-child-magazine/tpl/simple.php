@@ -30,7 +30,9 @@
 			</div>
 		</div>
 	</div>
-	<?php endwhile; wp_reset_query(); ?>
+	<?php endwhile; wp_reset_query();
+	var_dump($first);
+	 ?>
 	<div class="eduma-magazine__grid">
 	<?php
 		$num = ($instance['number']) ? $instance['number'] : 2;
