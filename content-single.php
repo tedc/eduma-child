@@ -44,7 +44,7 @@ $theme_options_data = get_theme_mods();
 				</div>
 			</div>
 		</div>
-		<?php do_action( 'thim_about_author' ); ?>
+		<?php //do_action( 'thim_about_author' ); ?>
 
 		<?php
 		$prev_post = get_previous_post();
