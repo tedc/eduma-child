@@ -39,6 +39,13 @@ function mytheme_add_widget_tabs($tabs) {
 }
 add_filter('siteorigin_panels_widget_dialog_tabs', 'mytheme_add_widget_tabs', 20);
 
+function certicate_tab($tabs) {
+    $tabs['certificates'] = __( 'Certificati', 'uba' );
+    return $tabs;
+}
+
+add_action( 'learn_press_settings_tabs_array', 'certicate_tab', 99999 );
+
 
 // function search_shortcode() {
 // 	ob_start();
